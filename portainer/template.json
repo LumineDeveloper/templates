@@ -13,11 +13,6 @@
         "ports": ["27017/tcp"],
         "env": [
           {
-            "name": "REPLICASETS",
-            "label": "ReplicaSet",
-            "description": "Replica Set name, it should same to all the mongodb node cluster"
-          },
-          {
             "name": "MONGO_INITDB_ROOT_USERNAME",
             "label": "Username",
             "description": "Please do not left empty for data security."
@@ -28,7 +23,7 @@
             "description": "Please do not left empty for data security."
           }
         ],
-        "command": "--replSet ${REPLICASETS} --bind_ip_all --port 27017 --keyFile /keyFile",
+        "command": "--replSet LumineReplicaSets --bind_ip_all --port 27017 --keyFile /keyFile",
         "volumes": [
           {
             "container": "/data/db",
