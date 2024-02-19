@@ -33,6 +33,10 @@
           {
             "container": "/data/db",
             "bind": "/stacks/mongodb-replset/data"
+          },
+          {
+            "container": "/data/configdb",
+            "bind": "/stacks/mongodb-replset/config"
           }
         ]
     },
