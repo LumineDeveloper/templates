@@ -28,7 +28,7 @@
             "description": "Please do not left empty for data security."
           }
         ],
-        "command": "--replSet $REPLICASETS --bind_ip_all --port 27017 --keyFile /keyFile",
+        "command": "--replSet {{REPLICASETS}} --bind_ip_all --port 27017 --keyFile /keyFile",
         "volumes": [
           {
             "container": "/data/db",
