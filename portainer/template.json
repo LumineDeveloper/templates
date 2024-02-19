@@ -11,7 +11,7 @@
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
       "image": "luminestudio/mongo-replset:7.0",
       "ports": ["27017/tcp"],
-      "command": ["--replSet LumineReplicaSets --bind_ip_all --keyFile /keyFile"],
+      "command": "--replSet LumineReplicaSets --bind_ip_all --keyFile /keyFile",
       "env": [
         {
           "name": "MONGO_INITDB_ROOT_USERNAME",
