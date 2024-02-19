@@ -9,7 +9,6 @@
         "categories": ["database"],
         "platform": "linux",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-        "registry": "luminestudio",
         "image": "luminestudio/dev:mongo-replset70",
         "restart_policy": "unless-stopped",
         "ports": ["27017/tcp"],
