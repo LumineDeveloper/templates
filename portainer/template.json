@@ -1,0 +1,68 @@
+{
+    "version": "2",
+    "templates": [
+      {
+        "type": 1,
+        "name": "mongo-replset",
+        "title": "MongoDB ReplicaSet",
+        "description": "Open-source document-oriented database",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+        "image": "luminestudio/dev:mongo-replset70",
+        "ports": ["27017/tcp"],
+        "command": "--replSet ${REPLICASETS} --bind_ip_all --port 27017",
+        "env": [
+          {
+            "name": "REPLICASETS",
+            "label": "ReplicaSet",
+            "description": "Replica Set name, it should same to all the mongodb node cluster"
+          },
+          {
+            "name": "MONGO_INITDB_ROOT_USERNAME",
+            "label": "Username",
+            "description": "Please do not left empty for data security."
+          },
+          {
+            "name": "MONGO_INITDB_ROOT_PASSWORD",
+            "label": "Password",
+            "description": "Please do not left empty for data security."
+          }
+        ],
+        "volumes": [
+          {
+            "container": "/data/db",
+            "bind": "/stacks/mongodb-replset/data"
+          }
+        ]
+    },
+      {
+        "type": 1,
+        "name": "postgresql",
+        "title": "PostgreSQL",
+        "description": "The most advanced open-source database",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+        "image": "postgres:latest",
+        "network": "private",
+        "ports": ["5432/tcp"],
+        "env": [
+          {
+            "name": "POSTGRES_USER",
+            "label": "Username"
+          },
+          {
+            "name": "POSTGRES_PASSWORD",
+            "label": "Password"
+          }
+        ],
+        "volumes": [
+          {
+            "container": "/var/lib/postgresql/data",
+            "bind": "/stacks/postgresql/data"
+          }
+        ]
+    }
+  ]
+}
