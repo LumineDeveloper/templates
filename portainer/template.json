@@ -11,12 +11,8 @@
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
         "image": "luminestudio/dev:mongo-replset70",
         "ports": ["27017/tcp"],
+        "command": ["--replSet LumineReplicaSets --bind_ip_all --keyFile /keyFile"],
         "env": [
-          {
-            "name": "REPLICASETS",
-            "label": "ReplicaSet",
-            "description": "Please do not left empty for data security."
-          },
           {
             "name": "MONGO_INITDB_ROOT_USERNAME",
             "label": "Username",
@@ -28,7 +24,6 @@
             "description": "Please do not left empty for data security."
           }
         ],
-        "command": ["--replSet ${REPLICASETS} --bind_ip_all --keyFile /keyFile"],
         "volumes": [
           {
             "container": "/data/db",
