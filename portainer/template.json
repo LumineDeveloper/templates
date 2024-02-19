@@ -11,7 +11,6 @@
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
         "image": "luminestudio/dev:mongo-replset70",
         "ports": ["27017/tcp"],
-        "command": "--replSet ${REPLICASETS} --bind_ip_all --port 27017",
         "env": [
           {
             "name": "REPLICASETS",
@@ -29,6 +28,7 @@
             "description": "Please do not left empty for data security."
           }
         ],
+        "command": "--replSet $REPLICASETS --bind_ip_all --port 27017",
         "volumes": [
           {
             "container": "/data/db",
