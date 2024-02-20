@@ -77,7 +77,7 @@
         },
         {
           "name": "POSTGRES_DATABASE",
-          "label": "Database User",
+          "label": "Database Name",
           "description": "It can be left empty, otherwise the database will be created if doesn't exist."
         },
         {
