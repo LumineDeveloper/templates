@@ -8,7 +8,6 @@
       "categories": "database",
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-      "image": "luminestudio/dev:mongo-4.2.12",
       "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/mongo/4.2.12-compose.yml" },
       "administrator_only": true,
       "env": [
@@ -36,7 +35,6 @@
       "categories": "database",
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-      "image": "luminestudio/dev:mongo-7.0",
       "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/mongo/7.0-compose.yml" },
       "administrator_only": true,
       "env": [
@@ -64,8 +62,7 @@
       "categories": ["database"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
-      "image": "luminestudio/dev:postgresql-15-repmgr",
-      "ports": ["5432/tcp"],
+      "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/postgresql/15-compose.yml" },
       "administrator_only": true,
       "env": [
         {
