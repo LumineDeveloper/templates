@@ -2,10 +2,10 @@
 
 services:
   mongodb:
-    image: personalimuno/mongodb:7.0
+    image: luminestudio/dev:mongo-4.2.12
     restart: always
     ports:
-      - 27017/tcp
+      - ${PORTS}:27017/tcp
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
