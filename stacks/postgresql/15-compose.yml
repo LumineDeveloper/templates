@@ -1,0 +1,27 @@
+---
+
+services:
+  postgresql:
+    image: luminestudio/dev:postgresql-15-repmgr
+    restart: always
+    ports:
+      - 5432:5432/tcp
+    environment:
+      -  REPMGR_PASSWORD=${REPMGR_PASSWORD}
+      -  REPMGR_PORT_NUMBER=5432
+      -  REPMGR_PRIMARY_HOST=${REPMGR_PRIMARY_HOST}
+      -  REPMGR_PRIMARY_PORT=5432
+      -  REPMGR_PARTNER_NODES=${REPMGR_PARTNER_NODES}
+      -  REPMGR_NODE_NAME=${REPMGR_NODE_NAME}
+      -  REPMGR_NODE_NETWORK_NAME=${REPMGR_NODE_NETWORK_NAME}
+      -  POSTGRESQL_POSTGRES_PASSWORD=${POSTGRESQL_POSTGRES_PASSWORD}
+      -  POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME}
+      -  POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      -  POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+      -  PUID=1001
+      -  PGID=1001
+      -  POSTGRESQL_SHARED_PRELOAD_LIBRARIES=pgaudit,pg_stat_statements
+      -  POSTGRESQL_SYNCHRONOUS_COMMIT_MODE=remote_write
+      -  POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS=1
+    volumes:
+      - /stacks/postgresql-15-repmgr/data:/bitnami/postgresql

@@ -5,7 +5,7 @@ services:
     image: luminestudio/dev:mongo-7.0
     restart: always
     ports:
-      - ${PORTS}:27017/tcp
+      - 27017:27017/tcp
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
