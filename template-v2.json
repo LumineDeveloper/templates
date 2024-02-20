@@ -53,8 +53,7 @@
         {
           "name": "REPLICASETS",
           "label": "ReplicaSet",
-          "description": "Replica Set name is required, it should identical to each mongodb node cluster",
-          "required": true
+          "description": "Replica Set name is required, it should identical to each mongodb node cluster"
         }
       ]
     },
@@ -65,17 +64,55 @@
       "categories": ["database"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
-      "image": "postgres:latest",
-      "network": "private",
+      "image": "luminestudio/dev:postgresql-15-repmgr",
       "ports": ["5432/tcp"],
+      "administrator_only": true,
       "env": [
         {
           "name": "POSTGRES_USER",
-          "label": "Username"
+          "label": "Database User",
+          "description": "It should not be empty and same to each postgresql node cluster."
         },
         {
           "name": "POSTGRES_PASSWORD",
-          "label": "Password"
+          "label": "Database Password",
+          "description": "It should not be empty and same to each postgresql node cluster."
+        },
+        {
+          "name": "POSTGRES_DATABASE",
+          "label": "Database User",
+          "description": "It can be left empty, otherwise the database will be created if doesn't exist."
+        },
+        {
+          "name": "REPMGR_PASSWORD",
+          "label": "Replication Password",
+          "description": "It can not be empty, the password should identical to all the postgresql node cluster."
+        },
+        {
+          "name": "REPMGR_PRIMARY",
+          "label": "Primary Host",
+          "description": "Hostname or IP address of the primary host, put this node Hostname or IP address if it's the primary node."
+        },
+        {
+          "name": "REPMGR_PARTNER_NODE",
+          "label": "Node Machine Cluster",
+          "description": "Hostname or IP address of all the postgresql node cluster (even primary node), the format should like hostname1,hostname2,hostname3:5432 or 192.172.0.1,192.172.0.2,192.172.0.3:5432"
+        },
+        {
+          "name": "REPMGR_NODE_NAME",
+          "label": "Node ID",
+          "default": "node-0",
+          "description": "Node ID name of this machine, it should uniq from the other nodes in the cluster. if this node is primary, let the value as node-0 and incremental number to the rest of secondary node"
+        },
+        {
+          "name": "REPMGR_NODE_NETWORK_NAME",
+          "label": "Node Name",
+          "description": "Netbios or Hostname of this node machine, recommended to use FQDN hostname to globally known."
+        },
+        {
+          "name": "POSTGRESQL_POSTGRES_PASSWORD",
+          "label": "Root Password",
+          "description": "It's mandatory, can not be empty!."
         }
       ],
       "volumes": [
