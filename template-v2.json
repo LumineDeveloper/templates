@@ -8,8 +8,9 @@
       "categories": "database",
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-      "image": "personalimuno/mongodb:7.0",
+      "image": "luminestudio/dev:mongo-4.2.12",
       "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/mongo/4.2.12-compose.yml" },
+      "administrator_only": true,
       "env": [
         {
           "name": "MONGO_INITDB_ROOT_USERNAME",
@@ -24,7 +25,7 @@
         {
           "name": "REPLICASETS",
           "label": "ReplicaSet",
-          "description": "Replica Set name, it should identic to each mongodb node cluster"
+          "description": "Replica Set name is required, it should identic to each mongodb node cluster"
         }
       ]
     },
@@ -35,8 +36,9 @@
       "categories": "database",
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-      "image": "personalimuno/mongodb:7.0",
+      "image": "luminestudio/dev:mongo-7.0",
       "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/mongo/7.0-compose.yml" },
+      "administrator_only": true,
       "env": [
         {
           "name": "MONGO_INITDB_ROOT_USERNAME",
@@ -51,7 +53,35 @@
         {
           "name": "REPLICASETS",
           "label": "ReplicaSet",
-          "description": "Replica Set name, it should identic to each mongodb node cluster"
+          "description": "Replica Set name is required, it should identical to each mongodb node cluster",
+          "required": true
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "PostgreSQL ReplicaSet",
+      "description": "The most advanced open-source database",
+      "categories": ["database"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+      "image": "postgres:latest",
+      "network": "private",
+      "ports": ["5432/tcp"],
+      "env": [
+        {
+          "name": "POSTGRES_USER",
+          "label": "Username"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Password"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql/data",
+          "bind": "/stacks/postgresql/data"
         }
       ]
     }
