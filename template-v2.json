@@ -3,13 +3,40 @@
   "templates": [
     {
       "type": 3,
+      "title": "MongoDB 4.2.12 ReplicaSets",
+      "description": "Open-source document-oriented database",
+      "categories": "database",
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+      "image": "personalimuno/mongodb:7.0",
+      "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/mongo/4.2.12-compose.yml" },
+      "env": [
+        {
+          "name": "MONGO_INITDB_ROOT_USERNAME",
+          "label": "Root Username",
+          "description": "Recommended to not left it empty for security reason, otherwise leave it blank"
+        },
+        {
+          "name": "MONGO_INITDB_ROOT_PASSWORD",
+          "label": "Root Password",
+          "description": "Recommended to not left it empty for security reason, otherwise leave it blank"
+        },
+        {
+          "name": "REPLICASETS",
+          "label": "ReplicaSet",
+          "description": "Replica Set name, it should identic to each mongodb node cluster"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "MongoDB 7.0 ReplicaSets",
       "description": "Open-source document-oriented database",
       "categories": "database",
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
       "image": "personalimuno/mongodb:7.0",
-      "repository": { "url": "https://github.com/personalimuno/portainer", "stackfile": "seperate/mongodb-70.yml" },
+      "repository": { "url": "https://github.com/LumineDeveloper/templates", "stackfile": "stacks/mongo/7.0-compose.yml" },
       "env": [
         {
           "name": "MONGO_INITDB_ROOT_USERNAME",

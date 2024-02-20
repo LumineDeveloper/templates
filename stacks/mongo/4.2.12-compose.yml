@@ -11,5 +11,5 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     command: ["--replSet", "${REPLICASETS}", "--bind_ip_all",  "--keyFile", "/keyfile"]
     volumes:
-      - /stacks/mongodb-7.0-replset/data:/data/db
-      - /stacks/mongodb-7.0-replset/config:/data/configdb
+      - /stacks/mongodb-4.2.12-replset/data:/data/db
+      - /stacks/mongodb-4.2.12-replset/config:/data/configdb
