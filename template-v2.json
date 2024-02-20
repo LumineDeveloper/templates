@@ -86,7 +86,7 @@
           "description": "It can not be empty, the password should identical to all the postgresql node cluster."
         },
         {
-          "name": "REPMGR_PRIMARY",
+          "name": "REPMGR_PRIMARY_HOST",
           "label": "Primary Host",
           "description": "Hostname or IP address of the primary host, put this node Hostname or IP address if it's the primary node."
         },
