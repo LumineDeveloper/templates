@@ -88,7 +88,7 @@
         {
           "name": "REPMGR_PRIMARY_HOST",
           "label": "Primary Host",
-          "description": "Hostname or IP address of the primary host, put this node Hostname or IP address if it's the primary node."
+          "description": "Hostname or IP address of the primary host, put this 'Node Name' or IP address if it's the primary node."
         },
         {
           "name": "REPMGR_PARTNER_NODES",
