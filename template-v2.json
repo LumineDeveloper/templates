@@ -76,7 +76,7 @@
           "description": "It should not be empty and same to each postgresql node cluster."
         },
         {
-          "name": "POSTGRES_DATABASE",
+          "name": "POSTGRESQL_DATABASE",
           "label": "Database Name",
           "description": "It can be left empty, otherwise the database will be created if doesn't exist."
         },
