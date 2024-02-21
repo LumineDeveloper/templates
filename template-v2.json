@@ -111,12 +111,6 @@
           "label": "Root Password",
           "description": "It's mandatory, can not be empty!."
         }
-      ],
-      "volumes": [
-        {
-          "container": "/var/lib/postgresql/data",
-          "bind": "/stacks/postgresql/data"
-        }
       ]
     }
   ]
