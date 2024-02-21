@@ -52,6 +52,9 @@
           "name": "REPLICASETS",
           "label": "ReplicaSet",
           "description": "Replica Set name is required, it should identical to each mongodb node cluster"
+        },
+        {
+          "name": "FOLDER_ID"
         }
       ]
     },
@@ -66,12 +69,12 @@
       "administrator_only": true,
       "env": [
         {
-          "name": "POSTGRES_USER",
+          "name": "POSTGRESQL_USERNAME",
           "label": "Database User",
           "description": "It should not be empty and same to each postgresql node cluster."
         },
         {
-          "name": "POSTGRES_PASSWORD",
+          "name": "POSTGRESQL_PASSWORD",
           "label": "Database Password",
           "description": "It should not be empty and same to each postgresql node cluster."
         },
@@ -91,7 +94,7 @@
           "description": "Hostname or IP address of the primary host, put this node Hostname or IP address if it's the primary node."
         },
         {
-          "name": "REPMGR_PARTNER_NODE",
+          "name": "REPMGR_PARTNER_NODES",
           "label": "Node Machine Cluster",
           "description": "Hostname or IP address of all the postgresql node cluster (even primary node), the format should like hostname1,hostname2,hostname3:5432 or 192.172.0.1,192.172.0.2,192.172.0.3:5432"
         },
