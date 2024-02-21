@@ -22,7 +22,5 @@ services:
       -  POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS=1
       -  REPMGR_PORT_NUMBER=5432
       -  REPMGR_PRIMARY_PORT=5432
-      -  PUID=1001
-      -  PGID=1001
     volumes:
       - /stacks/postgresql-15-repmgr/data:/bitnami/postgresql
