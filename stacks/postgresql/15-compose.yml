@@ -4,7 +4,7 @@ services:
   postgresql:
     image: luminestudio/dev:postgresql-15-repmgr
     restart: always
-    user: 0:0
+    user: 1001:1001
     hostname: ${REPMGR_NODE_NETWORK_NAME}
     ports:
       - 5432:5432/tcp
