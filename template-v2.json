@@ -52,9 +52,6 @@
           "name": "REPLICASETS",
           "label": "ReplicaSet",
           "description": "Replica Set name is required, it should identical to each mongodb node cluster"
-        },
-        {
-          "name": "FOLDER_ID"
         }
       ]
     },
